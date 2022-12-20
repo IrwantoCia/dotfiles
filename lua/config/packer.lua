@@ -7,11 +7,27 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
-    use {
+    use({
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
         -- or                            , branch = '0.1.x',
-        requires = { { 'nvim-lua/plenary.nvim' } }
-    }
+        requires = { { 'nvim-lua/plenary.nvim' } },
+    })
+
+    use({ "smartpde/telescope-recent-files", config = function()
+        require("telescope").setup {
+            defaults = {
+                -- Your regular Telescope's options.
+            },
+            extensions = {
+                recent_files = {
+                    -- This extension's options, see below.
+                    only_cwd = true
+                }
+            }
+        }
+        require("telescope").load_extension("recent_files")
+    end
+    })
 
     use({
         'rose-pine/neovim',
