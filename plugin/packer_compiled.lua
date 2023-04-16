@@ -104,6 +104,11 @@ _G.packer_plugins = {
     path = "/home/buggy/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["copilot.vim"] = {
+    loaded = true,
+    path = "/home/buggy/.local/share/nvim/site/pack/packer/start/copilot.vim",
+    url = "https://github.com/github/copilot.vim"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/buggy/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -184,14 +189,14 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: telescope-recent-files
-time([[Config for telescope-recent-files]], true)
-try_loadstring("\27LJ\2\n®\1\0\0\5\0\n\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0004\3\0\0=\3\4\0025\3\6\0005\4\5\0=\4\a\3=\3\b\2B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\t\0'\2\a\0B\0\2\1K\0\1\0\19load_extension\15extensions\17recent_files\1\0\0\1\0\1\ronly_cwd\2\rdefaults\1\0\0\nsetup\14telescope\frequire\0", "config", "telescope-recent-files")
-time([[Config for telescope-recent-files]], false)
 -- Config for: rose-pine
 time([[Config for rose-pine]], true)
 try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\26colorscheme rose-pine\bcmd\bvim\0", "config", "rose-pine")
 time([[Config for rose-pine]], false)
+-- Config for: telescope-recent-files
+time([[Config for telescope-recent-files]], true)
+try_loadstring("\27LJ\2\n®\1\0\0\5\0\n\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0004\3\0\0=\3\4\0025\3\6\0005\4\5\0=\4\a\3=\3\b\2B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\t\0'\2\a\0B\0\2\1K\0\1\0\19load_extension\15extensions\17recent_files\1\0\0\1\0\1\ronly_cwd\2\rdefaults\1\0\0\nsetup\14telescope\frequire\0", "config", "telescope-recent-files")
+time([[Config for telescope-recent-files]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
