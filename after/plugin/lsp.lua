@@ -7,6 +7,12 @@ lsp.ensure_installed({
     'eslint',
     'lua_ls',
     'rust_analyzer',
+    'cssls',
+    'html',
+    'tailwindcss',
+    'pyright',
+    'jsonls',
+    'gopls'
 })
 
 -- Fix Undefined global 'vim'
@@ -19,6 +25,7 @@ lsp.configure('lua_ls', {
         }
     }
 })
+
 
 
 lsp.set_preferences({
@@ -38,9 +45,10 @@ lsp.set_preferences({
 lsp.on_attach(function(client, bufnr)
     local opts = { buffer = bufnr, remap = false }
 
-    vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+    vim.keymap.set("n", "fd", vim.lsp.buf.definition, opts)
 --    vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
     vim.keymap.set("n", "<leader>vws", vim.lsp.buf.workspace_symbol, opts)
+    vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
     vim.keymap.set("n", "<leader>vd", vim.diagnostic.open_float, opts)
     vim.keymap.set("n", "[d", vim.diagnostic.goto_next, opts)
     vim.keymap.set("n", "]d", vim.diagnostic.goto_prev, opts)

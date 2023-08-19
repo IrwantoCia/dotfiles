@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+# clear screen
+clear
+
+
+if ! tmux has-session &> /dev/null; then
+  echo "No tmux session found"
+fi
+
+SESSIONS_LIST=$(tmux list-sessions -F "#S" | fzf --reverse --border --ansi --prompt="Switch to session > " --margin 30%,15%)
+
+if [ -n "$SESSIONS_LIST" ]; then
+    tmux switch-client -t "$SESSIONS_LIST" 2> /dev/null || tmux attach-session -t "$SESSIONS_LIST"
+fi
