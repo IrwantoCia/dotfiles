@@ -39,7 +39,7 @@ vim.keymap.set("n", "<leader>Y", "\"+Y")
 vim.keymap.set("i", "jk", "<Esc>")
 
 vim.keymap.set("n", "Q", "<nop>")
-vim.keymap.set("n", "<C-f>", "<cmd>silent !tms<CR>")
+vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 vim.keymap.set("n", "<leader>f", function()
     vim.lsp.buf.format()
 end)
@@ -52,4 +52,5 @@ end)
 
 vim.keymap.set("n", "gu", "<cmd>diffget //2<CR>")
 vim.keymap.set("n", "gh", "<cmd>diffget //3<CR>")
+-- map git push to leader gp
 vim.keymap.set("n", "<leader>gp", "<cmd>Git push<CR>")
