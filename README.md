@@ -11,3 +11,7 @@ vim configuration
 - alacritty
 - zsh
 - oh myzsh
+
+# TODO
+- Install neovim
+- Set .zshrc

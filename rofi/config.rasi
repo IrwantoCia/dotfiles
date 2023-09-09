@@ -1,0 +1,14 @@
+configuration {
+  show-icons: true;
+  font: "SauceCodePro Nerd Font Medium 15";
+  drun-display-format: "{icon} {name}";
+  sort: true;
+  display-run: " ";
+  display-drun: " ";
+  display-window: " ";
+  modi: "window,run,drun";
+}
+
+//@theme "/home/buggy/.config/rofi/themes/nord.rasi"
+//@theme "/usr/share/rofi/themes/Pop-Dark.rasi"
+@theme "/home/buggy/.config/rofi/themes/simple-tokyonight.rasi"
