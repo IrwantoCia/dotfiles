@@ -54,3 +54,12 @@ vim.keymap.set("n", "gu", "<cmd>diffget //2<CR>")
 vim.keymap.set("n", "gh", "<cmd>diffget //3<CR>")
 -- map git push to leader gp
 vim.keymap.set("n", "<leader>gp", "<cmd>Git push<CR>")
+
+vim.keymap.set("n", "<leader><leader>", function()
+    vim.cmd("so")
+end)
+
+-- using jq for json formatting buffer all lines
+vim.keymap.set("n", "<leader>jq", function()
+    vim.cmd(":%!jq .")
+end)
