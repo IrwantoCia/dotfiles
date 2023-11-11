@@ -12,6 +12,14 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
  echo "---" | tee -a /tmp/polybar1.log
  polybar -c ~/.config/polybar/config.ini main 2>&1 | tee -a /tmp/polybar1.log & disown
  polybar -c ~/.config/polybar/config_bottom.ini main 2>&1 | tee -a /tmp/polybar1.log & disown
+
+if type "xrandr"; then
+  for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+    MONITOR=$m polybar --reload main &
+  done
+else
+  polybar --reload main &
+fi
 # 
  echo "Bars launched..."
 
