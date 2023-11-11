@@ -12,7 +12,10 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 # Launch Polybar with config_bottom.ini for all connected monitors
 if type "xrandr"; then
   for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-    MONITOR=$m polybar --reload -c ~/.config/polybar/config_bottom.ini main &
+    # Launch the main bar
+    MONITOR=$m polybar --reload -c ~/.config/polybar/config.ini main &
+    # Launch the bottom bar
+    MONITOR=$m polybar --reload -c ~/.config/polybar/config_bottom.ini bottom &
   done
 else
   polybar --reload -c ~/.config/polybar/config.ini main &
