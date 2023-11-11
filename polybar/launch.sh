@@ -9,15 +9,10 @@ killall -q polybar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch Polybar for each connected monitor, with special handling for eDP-1
+# Launch Polybar with config_bottom.ini for all connected monitors
 if type "xrandr"; then
   for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-    if [ "$m" = "eDP-1" ]; then
-      # Launch the bottom bar for eDP-1
-      MONITOR=$m polybar --reload -c ~/.config/polybar/config_bottom.ini main &
-    else
-      # Launch the default bar for other monitors
-      MONITOR=$m polybar --reload -c ~/.config/polybar/config_$m.ini main &
-    fi
+    MONITOR=$m polybar --reload -c ~/.config/polybar/config_bottom.ini main &
   done
 else
   polybar --reload -c ~/.config/polybar/config.ini main &
