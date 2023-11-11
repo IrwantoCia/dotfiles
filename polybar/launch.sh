@@ -15,10 +15,11 @@ if type "xrandr"; then
     # Launch the main bar
     MONITOR=$m polybar --reload -c ~/.config/polybar/config.ini main &
     # Launch the bottom bar
-    MONITOR=$m polybar --reload -c ~/.config/polybar/config_bottom.ini bottom &
+    MONITOR=$m polybar --reload -c ~/.config/polybar/config_bottom.ini main &
   done
 else
   polybar --reload -c ~/.config/polybar/config.ini main &
+  polybar --reload -c ~/.config/polybar/config_bottom.ini main &
 fi
 # 
  echo "Bars launched..."
