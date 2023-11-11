@@ -8,17 +8,13 @@ killall -q polybar
 ## Wait until the processes have been shut down
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
-# Launch bar1 and bar2
- echo "---" | tee -a /tmp/polybar1.log
- polybar -c ~/.config/polybar/config.ini main 2>&1 | tee -a /tmp/polybar1.log & disown
- polybar -c ~/.config/polybar/config_bottom.ini main 2>&1 | tee -a /tmp/polybar1.log & disown
-
+# Launch Polybar for each connected monitor
 if type "xrandr"; then
   for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-    MONITOR=$m polybar --reload main &
+    MONITOR=$m polybar --reload -c ~/.config/polybar/config_$m.ini main &
   done
 else
-  polybar --reload main &
+  polybar --reload -c ~/.config/polybar/config.ini main &
 fi
 # 
  echo "Bars launched..."
