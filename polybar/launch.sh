@@ -13,15 +13,15 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 if type "xrandr"; then
   for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
     # Launch the main bar
-    MONITOR=$m polybar --reload -c ~/.config/polybar/config.ini main &
-    # Launch the bottom bar only on HDMI-1-0
-    if [ "$m" = "HDMI-1-0" ]; then
-      MONITOR=$m polybar --reload -c ~/.config/polybar/config_bottom.ini bottom &
-    fi
+    # MONITOR=$m polybar --reload -c ~/.config/polybar/config.ini main &
+    # MONITOR=$m polybar --reload -c ~/.config/polybar/config_bottom.ini main &
+   MONITOR=$m polybar -c ~/.config/polybar/config.ini main 2>&1 | tee -a /tmp/polybar1.log & disown
+   MONITOR=$m polybar -c ~/.config/polybar/config_bottom.ini main 2>&1 | tee -a /tmp/polybar1.log & disown
   done
 else
-  polybar --reload -c ~/.config/polybar/config.ini main &
-  polybar --reload -c ~/.config/polybar/config_bottom.ini main &
+ echo "---" | tee -a /tmp/polybar1.log
+ polybar -c ~/.config/polybar/config.ini main 2>&1 | tee -a /tmp/polybar1.log & disown
+ polybar -c ~/.config/polybar/config_bottom.ini main 2>&1 | tee -a /tmp/polybar1.log & disown
 fi
 # 
  echo "Bars launched..."

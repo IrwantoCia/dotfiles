@@ -9,5 +9,11 @@ vim.keymap.set('n', '<C-p>', builtin.git_files, {})
 vim.keymap.set('n', '<leader>ps', function()
     builtin.grep_string({ search = vim.fn.input("Grep > ") })
 end)
-vim.keymap.set('n', '<leader>0', builtin.treesitter, {})
+vim.keymap.set('n', '<leader>0', function ()
+    builtin.treesitter({
+        ignore_symbols = {"import", "parameter"},
+        show_line = false
+    })
+end)
+
 vim.keymap.set('n', '<leader>e', extensions.recent_files.pick, {})

@@ -35,7 +35,7 @@ super + m
         bspc desktop -l next
 
 # change the workspace between 0-9
-super + {_,shift + }{0-9}
+alt + {_,shift + }{0-9}
        bspc {desktop -f,node -d} '^{0-9}'
 
 XF86Audio{Prev,Next}

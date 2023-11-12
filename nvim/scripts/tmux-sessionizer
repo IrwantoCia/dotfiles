@@ -3,7 +3,18 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find ~/Documents/personal/bacod.nvim ~/Documents/personal ~/Documents/personal/rust ~/Documents/personal/upwork  ~/Documents -mindepth 1 -maxdepth 1 -type d | fzf)
+    selected=$(find ~/Documents/personal/bacod.nvim \
+      ~/Documents/personal/upwork/weddingserv  \
+      ~/Documents/personal/upwork/weddingserv_backend \
+      ~/Documents/personal/upwork/Admin-Weddingserv \
+      ~/Documents/crimson/gama-event-backend-app  \
+      ~/Documents/crimson/gama-backend-utility  \
+      ~/Documents/crimson/gama-data-access  \
+      ~/Documents/crimson/gama-backend-app  \
+      ~/Documents/crimson/gama-cron-job  \
+      ~/Documents/crimson/analyzer  \
+      ~/Documents/crimson/logger  \
+      -mindepth 0 -maxdepth 0 -type d | fzf)
 fi
 
 if [[ -z $selected ]]; then
