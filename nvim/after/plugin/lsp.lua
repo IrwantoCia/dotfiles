@@ -12,7 +12,24 @@ lsp.ensure_installed({
     'tailwindcss',
     'pyright',
     'jsonls',
-    'gopls'
+    'gopls',
+    'elixirls',
+    'dockerls',
+    'marksman',
+    'sqlls',
+})
+
+lsp.configure('ccls', {
+  force_setup = true,
+  init_options = {
+    compilationDatabaseDirectory = 'build',
+    index = {
+      threads = 0
+    },
+    clang = {
+      excludeArgs = {'-frounding-math'}
+    }
+  }
 })
 
 -- Fix Undefined global 'vim'

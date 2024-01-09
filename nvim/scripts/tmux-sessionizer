@@ -4,17 +4,22 @@ if [[ $# -eq 1 ]]; then
     selected=$1
 else
     selected=$(find ~/Documents/personal/bacod.nvim \
-      ~/Documents/personal/upwork/weddingserv  \
-      ~/Documents/personal/upwork/weddingserv_backend \
-      ~/Documents/personal/upwork/Admin-Weddingserv \
+      ~/Documents/personal/duckstation/Applications \
+      ~/Documents/crimson/gama-cms-web-app  \
       ~/Documents/crimson/gama-event-backend-app  \
       ~/Documents/crimson/gama-backend-utility  \
       ~/Documents/crimson/gama-data-access  \
       ~/Documents/crimson/gama-backend-app  \
       ~/Documents/crimson/gama-cron-job  \
-      ~/Documents/crimson/analyzer  \
-      ~/Documents/crimson/logger  \
+      ~/Documents/personal/irwantocia.com  \
       -mindepth 0 -maxdepth 0 -type d | fzf)
+     # ~/Documents/personal/upwork/weddingserv  \
+     # ~/Documents/personal/upwork/weddingserv_backend \
+     # ~/Documents/personal/upwork/Admin-Weddingserv \
+     # ~/Documents/crimson/analyzer  \
+     # ~/Documents/crimson/logger  \
+     # ~/Documents/crimson/test  \
+     # ~/Downloads/aider/  \
 fi
 
 if [[ -z $selected ]]; then

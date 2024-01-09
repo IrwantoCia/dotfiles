@@ -24,7 +24,7 @@ dapui.setup({
         "repl",
         "console",
       },
-      size = 10,
+      size = 35,
       position = "right", -- Can be "bottom" or "top"
     },
   }
@@ -88,6 +88,15 @@ dap.configurations.javascript = {
     request = "launch",
     name = "Gama Event Backend App",
     program = "/home/buggy/Documents/crimson/gama-event-backend-app/src/index.js",
+    cwd = "${workspaceFolder}",
+    runtimeExecutable = "/home/buggy/.nvm/versions/node/v18.6.0/bin/nodemon",
+    env = { NODE_ENV = "development" }
+  },
+  {
+    type = "pwa-node",
+    request = "launch",
+    name = "node",
+    program = "/home/buggy/Documents/crimson/logger/app.js",
     cwd = "${workspaceFolder}",
     runtimeExecutable = "/home/buggy/.nvm/versions/node/v18.6.0/bin/nodemon",
     env = { NODE_ENV = "development" }

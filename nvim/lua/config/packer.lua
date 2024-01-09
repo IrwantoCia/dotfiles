@@ -10,7 +10,7 @@ return require('packer').startup(function(use)
 
   use 'junegunn/fzf'
 
-  use 'IrwantoCia/bacod.nvim'
+  -- use 'IrwantoCia/bacod.nvim'
   use({
     'nvim-telescope/telescope.nvim', branch = 'master', --tag = '0.1.2',
     -- or                            , branch = '0.1.x',
