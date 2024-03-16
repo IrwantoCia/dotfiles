@@ -62,7 +62,7 @@ return require('packer').startup(function(use)
   use 'kristijanhusak/vim-dadbod-completion'
 
   -- aider
-  use 'joshuavial/aider.nvim'
+  -- use 'joshuavial/aider.nvim'
 
   -- debugging
   use 'leoluz/nvim-dap-go'
@@ -110,16 +110,16 @@ return require('packer').startup(function(use)
   }
 
   -- chatgpt
-  use({
-    "dpayne/CodeGPT.nvim",
-    requires = {
-      "MunifTanjim/nui.nvim",
-      "nvim-lua/plenary.nvim",
-    },
-    config = function()
-      require("codegpt.config")
-    end
-  })
+  -- use({
+  --   "dpayne/CodeGPT.nvim",
+  --   requires = {
+  --     "MunifTanjim/nui.nvim",
+  --     "nvim-lua/plenary.nvim",
+  --   },
+  --   config = function()
+  --     require("codegpt.config")
+  --   end
+  -- })
   -- lsp
   use {
     'VonHeikemen/lsp-zero.nvim',

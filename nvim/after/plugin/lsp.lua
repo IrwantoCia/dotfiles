@@ -8,6 +8,7 @@ lsp.ensure_installed({
     'lua_ls',
     'rust_analyzer',
     'cssls',
+    'clangd',
     'html',
     'tailwindcss',
     'pyright',
@@ -19,16 +20,25 @@ lsp.ensure_installed({
     'sqlls',
 })
 
-lsp.configure('ccls', {
-  force_setup = true,
-  init_options = {
-    compilationDatabaseDirectory = 'build',
-    index = {
-      threads = 0
-    },
-    clang = {
-      excludeArgs = {'-frounding-math'}
-    }
+-- lsp.configure('ccls', {
+--   force_setup = true,
+--   init_options = {
+--     compilationDatabaseDirectory = 'build',
+--     index = {
+--       threads = 0
+--     },
+--     clang = {
+--       excludeArgs = {'-frounding-math'}
+--     }
+--   }
+-- })
+
+local cmp_nvim_lsp = require('cmp_nvim_lsp')
+lsp.configure('clangd', {
+  capabilities = cmp_nvim_lsp.default_capabilities(),
+   cmd = {
+    "clangd",
+    "--offset-encoding=utf-16",
   }
 })
 

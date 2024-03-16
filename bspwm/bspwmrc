@@ -3,17 +3,19 @@
 pgrep -x sxhkd > /dev/null || sxhkd &
 
 # check if HDMI-1-0 is available, then set as primary output
- if xrandr | grep "HDMI-1-0 connected"; then
-     xrandr --output HDMI-1-0 --primary --mode 1920x1080 --rate 75.00 --output eDP-1 --right-of HDMI-1-0 --mode 1920x1080 --rate 60.00
+ # if xrandr | grep "HDMI-1-0 connected"; then
+ if xrandr | grep "HDMI-0 connected"; then
+     xrandr --output HDMI-0 --primary --mode 1920x1080 --rate 75.00 --output eDP-1-1 --right-of HDMI-1-0 --mode 1920x1080 --rate 60.00
+     # xrandr --output HDMI-1-0 --primary --mode 1920x1080 --rate 60.00 --output eDP-1 --right-of HDMI-1-0 --mode 1920x1080 --rate 60.00
      # xrandr --output eDP-1 --mode 1920x1080 --rate 60.00 --output HDMI-1-0 --primary --right-of eDP-1 --mode 1920x1080 --rate 60.00
      sleep 1
      bspc wm --reorder-monitors HDMI-1-0 eDP-1
      # bspc wm -O HDMI-1-0 eDP-1
-     bspc monitor HDMI-1-0 -d 1 2 3 4 5 
-     bspc monitor eDP-1 -d 6 7 8 9 0
+     bspc monitor HDMI-0 -d 1 2 3 4 5 
+     bspc monitor eDP-1-1 -d 6 7 8 9 0
  else
-     xrandr --output eDP-1 --primary --mode 1920x1080 --rate 60.00
-     bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8 9 0
+     xrandr --output eDP-1-1 --primary --mode 1920x1080 --rate 60.00
+     bspc monitor eDP-1-1 -d 1 2 3 4 5 6 7 8 9 0
  fi
 
 bspc config merge_overlapping_monitors true

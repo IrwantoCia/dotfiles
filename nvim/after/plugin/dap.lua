@@ -95,6 +95,15 @@ dap.configurations.javascript = {
   {
     type = "pwa-node",
     request = "launch",
+    name = "Gama Cron",
+    program = "/home/buggy/Documents/crimson/gama-cron-job/src/index.js",
+    cwd = "${workspaceFolder}",
+    runtimeExecutable = "/home/buggy/.nvm/versions/node/v18.6.0/bin/nodemon",
+    env = { NODE_ENV = "development" }
+  },
+  {
+    type = "pwa-node",
+    request = "launch",
     name = "node",
     program = "/home/buggy/Documents/crimson/logger/app.js",
     cwd = "${workspaceFolder}",

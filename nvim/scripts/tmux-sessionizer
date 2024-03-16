@@ -11,7 +11,15 @@ else
       ~/Documents/crimson/gama-data-access  \
       ~/Documents/crimson/gama-backend-app  \
       ~/Documents/crimson/gama-cron-job  \
+      ~/Documents/crimson/gambit-api  \
+      ~/Documents/crimson/gambit-api/api  \
+      ~/Documents/crimson/gambit-api/api-bo  \
+      ~/Documents/crimson/gambit-api/packages/utility  \
+      ~/Documents/crimson/gambit-api/packages/data-access  \
+      ~/Documents/crimson/crimson.com  \
       ~/Documents/personal/irwantocia.com  \
+      ~/Documents/personal/belajar_c  \
+      ~/Documents/personal/livestreaming-backend  \
       -mindepth 0 -maxdepth 0 -type d | fzf)
      # ~/Documents/personal/upwork/weddingserv  \
      # ~/Documents/personal/upwork/weddingserv_backend \
